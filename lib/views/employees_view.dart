@@ -57,8 +57,28 @@ class EmployeesPage extends GetView<EmployeesController> {
                                 child: Padding(
                                   padding: EdgeInsets.all(8),
                                   child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text(_employeesController.employeesList[index].firstName)
+                                      Row(children: [
+                                        Icon(Icons.person,color: Colors.grey),
+                                        SizedBox(width:5),
+                                        Text(_employeesController.employeesList[index].firstName,
+                                        style: TextStyle(fontSize: 18),)
+                                      ],),
+                                      
+                                      Row(children: [
+                                        Icon(Icons.work,color: Colors.grey),
+                                        SizedBox(width:5),
+                                        Text(_employeesController.employeesList[index].position,
+                                        style: TextStyle(fontSize: 18),)
+                                      ],),
+                                      
+                                      Row(children: [
+                                        Icon(Icons.calendar_view_day,color: Colors.grey),
+                                        SizedBox(width:5),
+                                        Text(_employeesController.employeesList[index].vacations.toString(),
+                                        style: TextStyle(fontSize: 18),)
+                                      ],)
                                     ],
                                   ),
                                 )),
